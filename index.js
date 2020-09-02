@@ -18,7 +18,9 @@ function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
 
-console.log(processFirstItem(['Foo', 'bar'], (str) => `${str} ${str}`));
+// console.log(processFirstItem(['Foo', 'bar'], (str) => `${str} ${str}`)); 
+// it is like passing a normal fuction but it is being called inside function processFirstItem
+
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -29,10 +31,16 @@ console.log(processFirstItem(['Foo', 'bar'], (str) => `${str} ${str}`));
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ *  
+ *    -Counter1 will actually keep count when it is called whereas counter won't.
+ *  
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ *    -They are both using closure. I can tell by how they modify the variable outside their function scope.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ *    -You would use counter1 to keep track of your data. 
  *
 */
 
@@ -46,6 +54,13 @@ function counterMaker() {
 
 const counter1 = counterMaker();
 
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter1());
+
+// console.log('------- next line --------')
+
 // counter2 code
 let count = 0;
 
@@ -53,6 +68,12 @@ function counter2() {
   return count++;
 }
 
+// console.log(count, 'counter 2');
+// console.log(counter2());
+// console.log(counter2());
+// console.log(counter2());
+// console.log(counter2());
+// console.log(counter2());
 
 /* Task 2: inning() 
 
