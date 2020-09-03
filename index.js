@@ -152,16 +152,24 @@ function getInningScore(inning, numOfIns){
     away: 0
   };
 
+  
+
     for(let i = 1; i <= numOfIns; i++){
       score.home += inning();
       score.away += inning();
-      console.log(`${i} inning: \n awayTeam: ${score.away} \n homeTeam: ${score.home}`);
+      if (i === 1) {
+        console.log(`${i}st inning: ${score.away} - ${score.home}`);
+      } else if (i === 2) {
+        console.log(`${i}nd inning: ${score.away} - ${score.home}`);
+      } else if (i === 3) {
+        console.log(`${i}rd inning: ${score.away} - ${score.home}`);
+      } else {
+        console.log(`${i}th inning: ${score.away} - ${score.home}`);
+      }
     }
-
     console.log(`--Final Score-- \n Home: ${score.away} \n Away: ${score.home}`);
   return score;
 }
-
 
 
 function scoreboard(inning, getInningScore, num) {
