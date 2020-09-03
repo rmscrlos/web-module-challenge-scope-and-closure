@@ -151,9 +151,6 @@ function getInningScore(inning, numOfIns){
     home: 0,
     away: 0
   };
-
-  
-
     for(let i = 1; i <= numOfIns; i++){
       score.home += inning();
       score.away += inning();
