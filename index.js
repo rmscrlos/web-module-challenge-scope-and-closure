@@ -14,11 +14,12 @@
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
 */
-function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
-}
+  function processFirstItem(stringList, callback) {
+    return callback(stringList[0])
+  }
 
 // console.log(processFirstItem(['Foo', 'bar'], (str) => `${str} ${str}`)); 
+
 // it is like passing a normal fuction but it is being called inside function processFirstItem
 
 
@@ -140,39 +141,39 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function inning(){
+  function inning(){
 
-  return Math.floor(Math.random() * 3);
+    return Math.floor(Math.random() * 3);
 
-}
+  }
 
-function getInningScore(inning, numOfIns){
-  let score = {
-    home: 0,
-    away: 0
-  };
-    for(let i = 1; i <= numOfIns; i++){
-      score.home += inning();
-      score.away += inning();
-      if (i === 1) {
-        console.log(`${i}st inning: ${score.away} - ${score.home}`);
-      } else if (i === 2) {
-        console.log(`${i}nd inning: ${score.away} - ${score.home}`);
-      } else if (i === 3) {
-        console.log(`${i}rd inning: ${score.away} - ${score.home}`);
-      } else {
-        console.log(`${i}th inning: ${score.away} - ${score.home}`);
+  function getInningScore(inning, numOfIns){
+    let score = {
+      home: 0,
+      away: 0
+    };
+      for(let i = 1; i <= numOfIns; i++){
+        score.home += inning();
+        score.away += inning();
+        if (i === 1) {
+          console.log(`${i}st inning: ${score.away} - ${score.home}`);
+        } else if (i === 2) {
+          console.log(`${i}nd inning: ${score.away} - ${score.home}`);
+        } else if (i === 3) {
+          console.log(`${i}rd inning: ${score.away} - ${score.home}`);
+        } else {
+          console.log(`${i}th inning: ${score.away} - ${score.home}`);
+        }
       }
-    }
-    console.log(`--Final Score-- \n Home: ${score.away} \n Away: ${score.home}`);
-  return score;
-}
+      console.log(`--Final Score-- \n Home: ${score.away} \n Away: ${score.home}`);
+    return score;
+  }
 
 
-function scoreboard(inning, getInningScore, num) {
-  return getInningScore(inning, num);
-}
+  function scoreboard(inning, getInningScore, num) {
+    return getInningScore(inning, num);
+  }
 
 
-scoreboard(inning, getInningScore, 9);
+// scoreboard(inning, getInningScore, 9);
 
