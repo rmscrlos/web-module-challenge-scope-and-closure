@@ -112,12 +112,12 @@ finalScore(inning, 9) might return:
         for(let i = 0; i < numOfIns; i++){
           score.home += inning();
           score.away += inning();
-
         }
+        console.log(`--Final Score-- \n Home: ${score.home} \n Away: ${score.away}`);
       return score;
     }
 
-    console.log(finalScore(inning, 9));
+    // console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -146,12 +146,28 @@ function inning(){
 
 }
 
+function getInningScore(inning, numOfIns){
+  let score = {
+    home: 0,
+    away: 0
+  };
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+    for(let i = 1; i <= numOfIns; i++){
+      score.home += inning();
+      score.away += inning();
+      console.log(`${i} inning: \n awayTeam: ${score.away} \n homeTeam: ${score.home}`);
+    }
+
+    console.log(`--Final Score-- \n Home: ${score.away} \n Away: ${score.home}`);
+  return score;
 }
 
 
 
+function scoreboard(inning, getInningScore, num) {
+  return getInningScore(inning, num);
+}
 
+
+scoreboard(inning, getInningScore, 9);
 
